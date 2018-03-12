@@ -8,25 +8,49 @@ import metier.Hero;
 public class Main {
 
 	public static void main(String[] args) {
-//		textEtEchange.lancementJeu();
 		
 		Scanner sc = new Scanner(System.in);
 		char res = '0';
-//		int i = 0;
-		Hero theHero;
+		Hero theHero = null;
+		
+	
 		do {			
 			switch(res) {
 				case '0' : res = textEtEchange.lancementJeu(sc);
 					break;
-				case '1' : res = textEtEchange.creationHero(sc);
+				case '1' :
+						String name;
+						System.out.println("*** Création de ton Héro ***");
+						System.out.println("Son nom : ");
+						name = sc.nextLine();
+						if(name.trim().equals("")) {
+							theHero = new Hero();
+						}else {
+							theHero = new Hero(name.trim());
+						}
+						res = '2';
 					break;
-				case '2' : res = textEtEchange.startAventure(sc);
+				case '2' :
+						System.out.println("*** Menu ***");
+						System.out.println("3. afficher votre Héro");
+						System.out.println("4. afficher votre objet");
+						System.out.println("Q. Quitter");
+						res = sc.nextLine().charAt(0);
+						if(res == '3') {
+							theHero.afficheInventaire();
+						}else if(res == '4') {
+							theHero.afficherItem();
+						}
+						if(res != 'q' && res != 'Q') {res = '2';}
 					break;
-				case '3' : res = textEtEchange.market(sc);
 			}
-			System.out.println("avant while : "+res);
-//			i++;
-		}while(res != 'Q' && res != 'q'/*i<5*/);
+		}while(res != 'Q' && res != 'q');
+		
+		if(theHero != null) {
+			System.out.println("Le toString time :");
+			System.out.println(theHero);
+		}
+		
 		sc.close();
 		System.out.println("au revoir...");
 		

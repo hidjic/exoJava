@@ -8,7 +8,7 @@ abstract class Caractere {
 	protected int degatMax;
 	protected int level;
 	protected String arme;
-	protected int armure;
+	protected int pointArmure;
 	protected String typeArmure;
 	
 	public int getId() {
@@ -53,11 +53,11 @@ abstract class Caractere {
 	public void setArme(String arme) {
 		this.arme = arme;
 	}
-	public int getArmure() {
-		return armure;
+	public int getPointArmure() {
+		return pointArmure;
 	}
-	public void setArmure(int armure) {
-		this.armure = armure;
+	public void setPointArmure(int pointArmure) {
+		this.pointArmure = pointArmure;
 	}
 	public String getTypeArmure() {
 		return typeArmure;
@@ -67,11 +67,22 @@ abstract class Caractere {
 	}
 	
 	
-	protected void action() {}
-	protected void attaque() {}
-	protected void defence() {}
-	protected void parade() {}
-	protected void esquive() {}
+//	protected void action() {}
+//	protected void attaque() {}
+//	protected void defence() {}
+//	protected void parade() {}
+//	protected void esquive() {}
+	
+	public void afficheInventaire() {
+		System.out.println("*** INVENTAIRE ***");
+		System.out.println("Nom : "+this.nom);
+		System.out.println("Votre niveau : "+this.level);
+		System.out.println("Vos point de vie : "+this.pv);
+		System.out.println("Votre armure : "+this.typeArmure);
+		System.out.println("Vos point d'armure : "+this.pointArmure);
+		System.out.println("Votre arme : "+this.arme);
+		System.out.println("Vos degats : entre "+this.degatMini+" et "+this.degatMax);
+	}
 	
 	
 	

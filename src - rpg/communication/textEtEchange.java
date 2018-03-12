@@ -5,21 +5,20 @@ import java.util.Scanner;
 import metier.Hero;
 
 public class textEtEchange {
-	public final static char lancementJeu(Scanner sc) {
+	public static char lancementJeu(Scanner sc) {
 		char res;
 		System.out.println("Bienvenue dans ce RPG");
 		System.out.println("*** MENU ***");
-		System.out.println("1. Cr√©er un hero");
+		System.out.println("1. CrÈer un HÈro");
 		System.out.println("Q. Quitter");
 		res = sc.nextLine().charAt(0);
 		if(res != '1' && res != 'Q' && res != 'q') {res = '0';}
 		return res;
 	}
 	
-	public final static char creationHero(Scanner sc) {
+	public static char creationHero(Scanner sc) {
 		String name;
-//		boolean check = true;
-		System.out.println("*** Cr√©ation de ton Hero ***");
+		System.out.println("*** CrÈation de ton HÈro ***");
 		System.out.println("Son nom : ");
 		name = sc.nextLine();
 //		if(check) {
@@ -28,15 +27,15 @@ public class textEtEchange {
 			
 		System.out.println("Bienvenu dans cette aventure "+myHero.getNom());
 		System.out.println("*** Menu ***");
-		System.out.println("2. Partir en quete d'aventure");
-		System.out.println("3. Aller au march√©");
+		System.out.println("2. afficher votre HÈro");
+		System.out.println("3. afficher votre objet");
 		System.out.println("Q. Quitter");
 		return sc.nextLine().charAt(0);
 	}
 
-	public final static char startAventure(Scanner sc) {return 'q';}
+	public static char startAventure(Scanner sc) {return 'q';}
 	
-	public final static char market(Scanner sc) {
+	public static char market(Scanner sc) {
 		return 'q';
 	}
 
